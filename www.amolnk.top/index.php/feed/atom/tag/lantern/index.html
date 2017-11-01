@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+xmlns:thr="http://purl.org/syndication/thread/1.0"
+xml:lang="zh-CN"
+xml:base="http://www.amolnk.top/index.php/tag/lantern/"
+>
+<title type="text">Amo_lnk博客 - lantern</title>
+<subtitle type="text"></subtitle>
+<updated>2017-10-09T09:24:00+08:00</updated>
+<generator uri="http://typecho.org/" version="1.0/14.10.10">Typecho</generator>
+<link rel="alternate" type="text/html" href="http://www.amolnk.top/index.php/tag/lantern/" />
+<id>http://www.amolnk.top/index.php/feed/atom/tag/lantern/</id>
+<link rel="self" type="application/atom+xml" href="http://www.amolnk.top/index.php/feed/atom/tag/lantern/" />
+<entry>
+<title type="html"><![CDATA[Linux -- Lantern 无法启动]]></title>
+<link rel="alternate" type="text/html" href="http://www.amolnk.top/index.php/2017/10/09/4.html" />
+<id>http://www.amolnk.top/index.php/2017/10/09/4.html</id>
+<updated>2017-10-09T09:24:00+08:00</updated>
+<published>2017-10-09T09:24:00+08:00</published>
+<author>
+    <name>Amo_lnk</name>
+    <uri>http://www.amolnk.top/index.php/author/1/</uri>
+</author>
+<summary type="html"><![CDATA[问题：今天安装了Lantern之后，不能启动起来，一闪而过命令行里启动，包如下错误：/.lantern/bin/lantern: error while loading shared libra...]]></summary>
+<content type="html" xml:base="http://www.amolnk.top/index.php/2017/10/09/4.html" xml:lang="zh-CN"><![CDATA[
+<p>问题：<br />
+今天安装了Lantern之后，不能启动起来，一闪而过<br />
+命令行里启动，包如下错误：</p>
+<pre><code>/.lantern/bin/lantern: error while loading shared libraries: libappindicator3.so.1: cannot open shared object file: No such file or directory  
+</code></pre>
+<!--more-->
+尝试：
+<pre><code># apt-cache search libappindicator3  
+  
+gir1.2-appindicator3-0.1 - Typelib files for libappindicator3-1  
+&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;libappindicator3-1&lt;/span&gt; - allow applications to export a menu into the panel -- GTK3 version  
+libappindicator3-dev - allow applications to export a menu into the panel -- GTK3 development  
+   
+</code></pre>
+<p>安装  apt-get install libappindicator3-1</p>
+<p>结果：<br />
+可以愉快的玩耍了</p>
+
+]]></content>
+<link rel="replies" type="text/html" href="http://www.amolnk.top/index.php/2017/10/09/4.html#comments" thr:count="0" />
+<link rel="replies" type="application/atom+xml" href="http://www.amolnk.top/index.php/feed/atom/2017/10/09/4.html" thr:count="0"/>
+</entry>
+</feed>

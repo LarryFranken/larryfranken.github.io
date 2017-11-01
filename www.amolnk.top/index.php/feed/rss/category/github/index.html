@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns="http://purl.org/rss/1.0/"
+xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel rdf:about="http://www.amolnk.top/index.php/feed/rss/category/github/">
+<title>Amo_lnk博客 - github</title>
+<link>http://www.amolnk.top/index.php/category/github/</link>
+<description>github笔记</description>
+<items>
+<rdf:Seq>
+<rdf:li resource="http://www.amolnk.top/index.php/2017/10/11/24.html"/>
+<rdf:li resource="http://www.amolnk.top/index.php/2017/10/11/21.html"/>
+<rdf:li resource="http://www.amolnk.top/index.php/2017/10/11/16.html"/>
+<rdf:li resource="http://www.amolnk.top/index.php/2017/10/11/12.html"/>
+</rdf:Seq>
+</items>
+</channel>
+<item rdf:about="http://www.amolnk.top/index.php/2017/10/11/24.html">
+<title>04.清空远程仓库，或者删除文件</title>
+<link>http://www.amolnk.top/index.php/2017/10/11/24.html</link>
+<dc:date>2017-10-11T12:22:00+08:00</dc:date>
+<description>方法一：清空方法或者删除一个文件
+
+我只要把本地文件夹删除所有或者值删除一个，然后按着git上传篇的模板，执行命令，就可以了 看图
+
+方法2：使用git命令（推荐第一种，简单方便）
+对需要删除的文件、文件夹进行如下操作:
+git rm test.txt  #(删除文件)
+git rm -r test    #(删除文件夹)
+
+3.提交修改
+git commit -m &quot;Delete some files.&quot;
+
+4.将修改提交到远程仓库的xxx分支:
+git push origin xxx
+
+</description>
+</item>
+<item rdf:about="http://www.amolnk.top/index.php/2017/10/11/21.html">
+<title>03.git上传</title>
+<link>http://www.amolnk.top/index.php/2017/10/11/21.html</link>
+<dc:date>2017-10-11T11:44:00+08:00</dc:date>
+<description>（文章最后有总结）
+经过前两步的实战我们获取了地址，和复制到本地的空项目
+我们先进入这个空项目文件夹
+
+第一步
+我们需要一个ssh来连接你的github
+创建本地ssh key
+ $  ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;
+
+your_email@youremail.com是你的github所注册的邮箱
+之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。
+成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。
+回到github，进入Account Settings，左边选择SSH Keys，Add SSH Key,title随便填，粘贴key
+
+
+这里是后缀为.pub的文件，然后文件内容是以ssh开头的字符串
+为了验证是否成功，在git bash下输入：
+ $ git ssh -T git@github.com 
+
+如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。
+
+
+
+第二步 ：在此之前还需要设置username和email，因为github每次commit都会记录他们
+$ git config --global user.name &quot;your name&quot;
+$ git config --global user.email &quot;your_email@youremail.com&quot;
+
+但是再此之前我们得先把这个文件夹变成git仓库，其实就是利用git init  命令创建一个.git的隐藏文件夹，里面存储的是版本信息，和连接信息
+$ git init
+
+
+第三步： 绑定你的git远程地址
+ $ git remote add origin git@github.com:yourName/yourRepo.git
+
+后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。
+
+第四步： 上传文件
+ &nbsp; 1.我们首先在这个目录创建一些文件或者文件夹，比如a.html 和 文件夹img等等等，记得写点内容进去
+    然后我们执行命令将所有文件和文件夹放进 要上传的config信息里，git并不会每次上传扫描文件夹，他只会长传你指定的文件
+所以呢我们得添加文件到上传目录
+$ git add .          =&gt;   添加此目录所有文件
+$ git add a.html        =&gt;   添加a.html进入上传文件目录 
+
+
+ &nbsp; 2.我们查看上传目录的变化,和版本信息
+$ git commit -m &quot;first commit&quot;
+
+这一步也是必须的，
+并且一定要添加注释。终端会返回给你“1 file changed,1 insertion(+)”,表示你的文件提交成功，但还没同步到服务器！
+$  git commit -m &quot;first commit&quot;
+
+利用git static命令跟踪文件变化，当然了只能文本文件
+$  git status
+
+
+ &nbsp; 3.同步到服务器前要先将服务器代码同步到本地，这是为了防止出现冲突。
+命令行是：git pull.  表示把项目拉下来。会有“Already up-to-date.”的提示。
+
+ &nbsp; 4.最后一步 上传
+上传命令：  $ git push origin master
+期间，他会让你输入用户名密码，用户名就是你的账户id名 密码就是登录密码
+最后呢每次要执行的代码总结下，上面的是首次执行的
+git add .
+git commit -m &quot;first commit&quot;
+git status
+git remote add origin git@github.com:LarryFranken/dfg.git
+# git pull
+git push origin master
+
+因为我删除了 一个文件，所以我这里就不pull了
+看图
+
+</description>
+</item>
+<item rdf:about="http://www.amolnk.top/index.php/2017/10/11/16.html">
+<title>02.github项目下载</title>
+<link>http://www.amolnk.top/index.php/2017/10/11/16.html</link>
+<dc:date>2017-10-11T11:31:00+08:00</dc:date>
+<description>如下图，这是一个项目，在右边偏中看到绿色的 clone or download 按钮 ，我们点击他
+把生成的地址复制
+
+
+打开本地git bash
+跳到你想要复制项目的位置，输入git clone 复制的地址，如下图
+
+我们执行了下载命令，用ls查看本地文件，发现多个dfg（我们复制的项目，因为我们这里不是空的，所以有多个文件）
+进入dfg文件夹，查看所有文件发现就是项目中的文件
+如果你是空项目 ，他会提示你 你复制了一个空项目不用管他，因为本来就是空的嘛
+</description>
+</item>
+<item rdf:about="http://www.amolnk.top/index.php/2017/10/11/12.html">
+<title>01. 注册github 并 创建项目</title>
+<link>http://www.amolnk.top/index.php/2017/10/11/12.html</link>
+<dc:date>2017-10-11T11:19:00+08:00</dc:date>
+<description>打开官网页面 https://github.com 点击右上角的 Sign up
+然后我们此处略过一万字。。。
+如下图进入自己的gitub个人主页
+
+
+
+在右/上角点击+号，找到第一个New repository 点击进入
+
+然后我们进入创建界面
+依次填写项目名，详细介绍 ，选择公私有，是否创建readme文档
+最后点击create绿色按钮创建
+项目名只能英文
+
+</description>
+</item>
+</rdf:RDF>

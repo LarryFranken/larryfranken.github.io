@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+xmlns:thr="http://purl.org/syndication/thread/1.0"
+xml:lang="zh-CN"
+xml:base="http://www.amolnk.top/index.php/category/note/"
+>
+<title type="text">Amo_lnk博客 - 学习笔记</title>
+<subtitle type="text">关于日常学习的笔记</subtitle>
+<updated>2017-10-30T19:38:00+08:00</updated>
+<generator uri="http://typecho.org/" version="1.0/14.10.10">Typecho</generator>
+<link rel="alternate" type="text/html" href="http://www.amolnk.top/index.php/category/note/" />
+<id>http://www.amolnk.top/index.php/feed/atom/category/note/</id>
+<link rel="self" type="application/atom+xml" href="http://www.amolnk.top/index.php/feed/atom/category/note/" />
+<entry>
+<title type="html"><![CDATA[HTTRack网站克隆神器的配置与使用]]></title>
+<link rel="alternate" type="text/html" href="http://www.amolnk.top/index.php/2017/10/30/241.html" />
+<id>http://www.amolnk.top/index.php/2017/10/30/241.html</id>
+<updated>2017-10-30T19:38:00+08:00</updated>
+<published>2017-10-30T19:38:00+08:00</published>
+<author>
+    <name>Amo_lnk</name>
+    <uri>http://www.amolnk.top/index.php/author/1/</uri>
+</author>
+<summary type="html"><![CDATA[HTTRack是比较流行的整站克隆工具这里我介绍下Linux下HTTRack使用方法首先是:官网http://www.httrack.com/只要不懂就去官网看,]]></summary>
+<content type="html" xml:base="http://www.amolnk.top/index.php/2017/10/30/241.html" xml:lang="zh-CN"><![CDATA[
+<p>HTTRack是比较流行的整站克隆工具</p>
+<p>这里我介绍下Linux下HTTRack使用方法</p>
+<p>首先是:官网<a href="http://www.httrack.com/">http://www.httrack.com/</a></p>
+<p>只要不懂就去官网看,</p>
+<!--more-->
+ <h3>安装与配置:</h3>
+<pre><code>sudo apt-get install update
+sudo apt-get update
+sudo apt-get install httrack
+</code></pre>
+<p>执行上面的傻瓜式命令就可以安装了<br />
+我们可以打命令httrack --help看看装好了吗</p>
+<h3>使用教程:</h3>
+<pre><code>简单的方法:
+
+httrack 网址 -O &quot;保存位置&quot; -%v *.html
+httrack http://www.amolnk.top/ -O &quot;/home/shawne/Desktop/web_rack/www&quot; -%v *.html
+</code></pre>
+<p><img src="http://www.amolnk.top/usr/uploads/2017/10/4224650100.png"></img></p>
+<h3>类似交互提醒的方式</h3>
+    直接看图
+<img src="http://www.amolnk.top/usr/uploads/2017/10/4154294741.png"></img><br/>
+<p><img src="http://www.amolnk.top/usr/uploads/2017/10/880279540.png"></img></p>
+
+]]></content>
+<link rel="replies" type="text/html" href="http://www.amolnk.top/index.php/2017/10/30/241.html#comments" thr:count="0" />
+<link rel="replies" type="application/atom+xml" href="http://www.amolnk.top/index.php/feed/atom/2017/10/30/241.html" thr:count="0"/>
+</entry>
+<entry>
+<title type="html"><![CDATA[04.清空远程仓库，或者删除文件]]></title>
+<link rel="alternate" type="text/html" href="http://www.amolnk.top/index.php/2017/10/11/24.html" />
+<id>http://www.amolnk.top/index.php/2017/10/11/24.html</id>
+<updated>2017-10-11T12:22:00+08:00</updated>
+<published>2017-10-11T12:22:00+08:00</published>
+<author>
+    <name>Amo_lnk</name>
+    <uri>http://www.amolnk.top/index.php/author/1/</uri>
+</author>
+<summary type="html"><![CDATA[方法一：清空方法或者删除一个文件]]></summary>
+<content type="html" xml:base="http://www.amolnk.top/index.php/2017/10/11/24.html" xml:lang="zh-CN"><![CDATA[
+<p>方法一：清空方法或者删除一个文件</p>
+<!--more-->
+<p>我只要把本地文件夹删除所有或者值删除一个，然后按着git上传篇的模板，执行命令，就可以了 看图<br />
+<img src="http://www.amolnk.top/usr/uploads/2017/10/4118802003.png"></src></p>
+<p>方法2：使用git命令（推荐第一种，简单方便）<br />
+对需要删除的文件、文件夹进行如下操作:</p>
+<pre><code>git rm test.txt  #(删除文件)
+git rm -r test    #(删除文件夹)
+</code></pre>
+<p>3.提交修改</p>
+<pre><code>git commit -m &quot;Delete some files.&quot;
+</code></pre>
+<p>4.将修改提交到远程仓库的xxx分支:</p>
+<pre><code>git push origin xxx
+</code></pre>
+
+]]></content>
+<link rel="replies" type="text/html" href="http://www.amolnk.top/index.php/2017/10/11/24.html#comments" thr:count="0" />
+<link rel="replies" type="application/atom+xml" href="http://www.amolnk.top/index.php/feed/atom/2017/10/11/24.html" thr:count="0"/>
+</entry>
+<entry>
+<title type="html"><![CDATA[03.git上传]]></title>
+<link rel="alternate" type="text/html" href="http://www.amolnk.top/index.php/2017/10/11/21.html" />
+<id>http://www.amolnk.top/index.php/2017/10/11/21.html</id>
+<updated>2017-10-11T11:44:00+08:00</updated>
+<published>2017-10-11T11:44:00+08:00</published>
+<author>
+    <name>Amo_lnk</name>
+    <uri>http://www.amolnk.top/index.php/author/1/</uri>
+</author>
+<summary type="html"><![CDATA[（文章最后有总结）经过前两步的实战我们获取了地址，和复制到本地的空项目我们先进入这个空项目文件夹]]></summary>
+<content type="html" xml:base="http://www.amolnk.top/index.php/2017/10/11/21.html" xml:lang="zh-CN"><![CDATA[
+<p>（文章最后有总结）<br />
+经过前两步的实战我们获取了地址，和复制到本地的空项目<br />
+我们先进入这个空项目文件夹</p>
+<!--more-->
+<h2>第一步</h2>
+我们需要一个ssh来连接你的github
+创建本地ssh key
+<pre><code> $  ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;
+</code></pre>
+<p>your_email@youremail.com是你的github所注册的邮箱<br />
+之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。<br />
+成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。<br />
+回到github，进入Account Settings，左边选择SSH Keys，Add SSH Key,title随便填，粘贴key</p>
+<p><img src="http://www.amolnk.top/usr/uploads/2017/10/2870887266.png"></img><br />
+<img src="http://www.amolnk.top/usr/uploads/2017/10/3601548936.png"></img><br />
+这里是后缀为.pub的文件，然后文件内容是以ssh开头的字符串<br />
+为了验证是否成功，在git bash下输入：</p>
+<pre><code> $ git ssh -T git@github.com 
+</code></pre>
+<p>如果是第一次的会提示是否continue，输入yes就会看到：You’ve successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。</p>
+<p><img src="http://www.amolnk.top/usr/uploads/2017/10/606789584.png "></img><br />
+<img src="http://www.amolnk.top/usr/uploads/2017/10/1561253308.png "></img></p>
+<p><br/><br/></p>
+<h2>第二步 ：在此之前还需要设置username和email，因为github每次commit都会记录他们</h2>
+<pre><code>$ git config --global user.name &quot;your name&quot;
+$ git config --global user.email &quot;your_email@youremail.com&quot;
+</code></pre>
+<p>但是再此之前我们得先把这个文件夹变成git仓库，其实就是利用git init  命令创建一个.git的隐藏文件夹，里面存储的是版本信息，和连接信息</p>
+<pre><code>$ git init
+</code></pre>
+<p><br/><br/></p>
+<h2>第三步： 绑定你的git远程地址</h2>
+<pre><code> $ git remote add origin git@github.com:yourName/yourRepo.git
+</code></pre>
+<p>后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。</p>
+<p><br/><br/></p>
+<h2>第四步： 上传文件</h2>
+<h4> &nbsp; 1.我们首先在这个目录创建一些文件或者文件夹，比如a.html 和 文件夹img等等等，记得写点内容进去</h4>
+    然后我们执行命令将所有文件和文件夹放进 要上传的config信息里，git并不会每次上传扫描文件夹，他只会长传你指定的文件
+所以呢我们得添加文件到上传目录
+<pre><code>$ git add .          =&gt;   添加此目录所有文件
+$ git add a.html        =&gt;   添加a.html进入上传文件目录 
+</code></pre>
+<p><br/><br/></p>
+<h4> &nbsp; 2.我们查看上传目录的变化,和版本信息</h4>
+<pre><code>$ git commit -m &quot;first commit&quot;
+</code></pre>
+<p><span class="text-danger">这一步也是必须的，</span><br />
+并且一定要添加注释。终端会返回给你“1 file changed,1 insertion(+)”,表示你的文件提交成功，但还没同步到服务器！</p>
+<pre><code>$  git commit -m &quot;first commit&quot;
+</code></pre>
+<p>利用git static命令跟踪文件变化，当然了只能文本文件</p>
+<pre><code>$  git status
+</code></pre>
+<p><br/></p>
+<h4> &nbsp; 3.同步到服务器前要先将服务器代码同步到本地，这是<span class="text-danger">为了防止出现冲突</span>。</h4>
+命令行是：git pull.  表示把项目拉下来。会有“Already up-to-date.”的提示。
+<p><br/></p>
+<h4> &nbsp; 4.最后一步 上传</h4>
+上传命令：<span style="color:skyblue">  $ git push origin master</span>
+期间，他会让你输入用户名密码，用户名就是你的账户id名 密码就是登录密码
+<p>最后呢每次要执行的代码总结下，上面的是首次执行的</p>
+<pre><code>git add .
+git commit -m &quot;first commit&quot;
+git status
+git remote add origin git@github.com:LarryFranken/dfg.git
+# git pull
+git push origin master
+</code></pre>
+<p>因为我删除了 一个文件，所以我这里就不pull了<br />
+看图<br />
+<img src="http://www.amolnk.top/usr/uploads/2017/10/3853932179.png"></img></p>
+
+]]></content>
+<link rel="replies" type="text/html" href="http://www.amolnk.top/index.php/2017/10/11/21.html#comments" thr:count="0" />
+<link rel="replies" type="application/atom+xml" href="http://www.amolnk.top/index.php/feed/atom/2017/10/11/21.html" thr:count="0"/>
+</entry>
+<entry>
+<title type="html"><![CDATA[02.github项目下载]]></title>
+<link rel="alternate" type="text/html" href="http://www.amolnk.top/index.php/2017/10/11/16.html" />
+<id>http://www.amolnk.top/index.php/2017/10/11/16.html</id>
+<updated>2017-10-11T11:31:00+08:00</updated>
+<published>2017-10-11T11:31:00+08:00</published>
+<author>
+    <name>Amo_lnk</name>
+    <uri>http://www.amolnk.top/index.php/author/1/</uri>
+</author>
+<summary type="html"><![CDATA[如下图，这是一个项目，在右边偏中看到绿色的 clone or download 按钮 ，我们点击他把生成的地址复制]]></summary>
+<content type="html" xml:base="http://www.amolnk.top/index.php/2017/10/11/16.html" xml:lang="zh-CN"><![CDATA[
+<p>如下图，这是一个项目，在右边偏中看到绿色的 clone or download 按钮 ，我们点击他<br />
+把生成的地址复制</p>
+<!--more-->
+<p><img src="http://www.amolnk.top/usr/uploads/2017/10/1307495696.png"></img></p>
+<p>打开本地git bash<br />
+跳到你想要复制项目的位置，输入git clone 复制的地址，如下图<br />
+<img src="http://www.amolnk.top/usr/uploads/2017/10/364273844.png"></img></p>
+<p>我们执行了下载命令，用ls查看本地文件，发现多个dfg（我们复制的项目，因为我们这里不是空的，所以有多个文件）<br />
+进入dfg文件夹，查看所有文件发现就是项目中的文件<br />
+如果你是空项目 ，他会提示你 你复制了一个空项目不用管他，因为本来就是空的嘛</p>
+
+]]></content>
+<link rel="replies" type="text/html" href="http://www.amolnk.top/index.php/2017/10/11/16.html#comments" thr:count="0" />
+<link rel="replies" type="application/atom+xml" href="http://www.amolnk.top/index.php/feed/atom/2017/10/11/16.html" thr:count="0"/>
+</entry>
+<entry>
+<title type="html"><![CDATA[01. 注册github 并 创建项目]]></title>
+<link rel="alternate" type="text/html" href="http://www.amolnk.top/index.php/2017/10/11/12.html" />
+<id>http://www.amolnk.top/index.php/2017/10/11/12.html</id>
+<updated>2017-10-11T11:19:00+08:00</updated>
+<published>2017-10-11T11:19:00+08:00</published>
+<author>
+    <name>Amo_lnk</name>
+    <uri>http://www.amolnk.top/index.php/author/1/</uri>
+</author>
+<summary type="html"><![CDATA[打开官网页面 https://github.com 点击右上角的 Sign up然后我们此处略过一万字。。。如下图进入自己的gitub个人主页]]></summary>
+<content type="html" xml:base="http://www.amolnk.top/index.php/2017/10/11/12.html" xml:lang="zh-CN"><![CDATA[
+<p>打开官网页面 <a href="https://github.com">https://github.com</a> 点击右上角的 <button class="btn btn-primary btn-xs ">Sign up</button><br />
+然后我们此处略过一万字。。。</p>
+<p>如下图进入自己的gitub个人主页</p>
+<!--more-->
+<p><img src="http://www.amolnk.top/usr/uploads/2017/10/1510778081.png"></img><br />
+<br></p>
+<p>在右/上角点击+号，找到第一个New repository 点击进入</p>
+<p><img src="http://www.amolnk.top/usr/uploads/2017/10/4238208685.png"></img></p>
+<p>然后我们进入创建界面<br />
+依次填写项目名，详细介绍 ，选择公私有，是否创建readme文档<br />
+最后点击create绿色按钮创建<br />
+项目名只能英文</p>
+<p><img src="http://www.amolnk.top/usr/uploads/2017/10/3454006755.png"></img></p>
+
+]]></content>
+<link rel="replies" type="text/html" href="http://www.amolnk.top/index.php/2017/10/11/12.html#comments" thr:count="0" />
+<link rel="replies" type="application/atom+xml" href="http://www.amolnk.top/index.php/feed/atom/2017/10/11/12.html" thr:count="0"/>
+</entry>
+</feed>

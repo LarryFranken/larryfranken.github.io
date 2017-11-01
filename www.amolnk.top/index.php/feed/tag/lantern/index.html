@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+xmlns:content="http://purl.org/rss/1.0/modules/content/"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+xmlns:atom="http://www.w3.org/2005/Atom"
+xmlns:wfw="http://wellformedweb.org/CommentAPI/">
+<channel>
+<title>Amo_lnk博客 - lantern</title>
+<link>http://www.amolnk.top/index.php/tag/lantern/</link>
+<atom:link href="http://www.amolnk.top/index.php/feed/tag/lantern/" rel="self" type="application/rss+xml" />
+<language>zh-CN</language>
+<description></description>
+<lastBuildDate>Mon, 09 Oct 2017 09:24:00 +0800</lastBuildDate>
+<pubDate>Mon, 09 Oct 2017 09:24:00 +0800</pubDate>
+<item>
+<title>Linux -- Lantern 无法启动</title>
+<link>http://www.amolnk.top/index.php/2017/10/09/4.html</link>
+<guid>http://www.amolnk.top/index.php/2017/10/09/4.html</guid>
+<pubDate>Mon, 09 Oct 2017 09:24:00 +0800</pubDate>
+<dc:creator>Amo_lnk</dc:creator>
+<description><![CDATA[问题：今天安装了Lantern之后，不能启动起来，一闪而过命令行里启动，包如下错误：/.lantern/bin/lantern: error while loading shared libra...]]></description>
+<content:encoded xml:lang="zh-CN"><![CDATA[
+<p>问题：<br />
+今天安装了Lantern之后，不能启动起来，一闪而过<br />
+命令行里启动，包如下错误：</p>
+<pre><code>/.lantern/bin/lantern: error while loading shared libraries: libappindicator3.so.1: cannot open shared object file: No such file or directory  
+</code></pre>
+<!--more-->
+尝试：
+<pre><code># apt-cache search libappindicator3  
+  
+gir1.2-appindicator3-0.1 - Typelib files for libappindicator3-1  
+&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;libappindicator3-1&lt;/span&gt; - allow applications to export a menu into the panel -- GTK3 version  
+libappindicator3-dev - allow applications to export a menu into the panel -- GTK3 development  
+   
+</code></pre>
+<p>安装  apt-get install libappindicator3-1</p>
+<p>结果：<br />
+可以愉快的玩耍了</p>
+
+]]></content:encoded>
+<slash:comments>0</slash:comments>
+<comments>http://www.amolnk.top/index.php/2017/10/09/4.html#comments</comments>
+<wfw:commentRss>http://www.amolnk.top/index.php/feed/2017/10/09/4.html</wfw:commentRss>
+</item>
+</channel>
+</rss>

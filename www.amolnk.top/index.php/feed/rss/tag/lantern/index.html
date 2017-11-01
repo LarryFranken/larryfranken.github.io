@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+xmlns="http://purl.org/rss/1.0/"
+xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel rdf:about="http://www.amolnk.top/index.php/feed/rss/tag/lantern/">
+<title>Amo_lnk博客 - lantern</title>
+<link>http://www.amolnk.top/index.php/tag/lantern/</link>
+<description></description>
+<items>
+<rdf:Seq>
+<rdf:li resource="http://www.amolnk.top/index.php/2017/10/09/4.html"/>
+</rdf:Seq>
+</items>
+</channel>
+<item rdf:about="http://www.amolnk.top/index.php/2017/10/09/4.html">
+<title>Linux -- Lantern 无法启动</title>
+<link>http://www.amolnk.top/index.php/2017/10/09/4.html</link>
+<dc:date>2017-10-09T09:24:00+08:00</dc:date>
+<description>问题：
+今天安装了Lantern之后，不能启动起来，一闪而过
+命令行里启动，包如下错误：
+/.lantern/bin/lantern: error while loading shared libraries: libappindicator3.so.1: cannot open shared object file: No such file or directory  
+
+
+尝试：
+# apt-cache search libappindicator3  
+  
+gir1.2-appindicator3-0.1 - Typelib files for libappindicator3-1  
+&lt;span style=&quot;margin: 0px; padding: 0px;&quot;&gt;libappindicator3-1&lt;/span&gt; - allow applications to export a menu into the panel -- GTK3 version  
+libappindicator3-dev - allow applications to export a menu into the panel -- GTK3 development  
+   
+
+安装  apt-get install libappindicator3-1
+结果：
+可以愉快的玩耍了
+</description>
+</item>
+</rdf:RDF>
